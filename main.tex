@@ -30,7 +30,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
 %liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-%toctotoc, % Uncomment to add the main table of contents to the table of contents
+toctotoc, % Uncomment to add the main table of contents to the table of contents
 %parskip, % Uncomment to add space between paragraphs
 %nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
@@ -45,7 +45,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{float}
 
-\addbibresource{example.bib} % The filename of the bibliography
+\addbibresource{bibliography.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -164,7 +164,7 @@ headsepline, % Uncomment to get a line under the header
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
 
-\cleardoublepage
+\clearpage
 
 %----------------------------------------------------------------------------------------
 %	QUOTATION PAGE
@@ -266,10 +266,10 @@ $\omega$ & angular frequency & \si{\radian} \\
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter1}
-%\include{Chapters/Chapter2} 
-%\include{Chapters/Chapter3}
-%\include{Chapters/Chapter4} 
-%\include{Chapters/Chapter5} 
+\include{Chapters/Chapter2} 
+\include{Chapters/Chapter3}
+\include{Chapters/Chapter4} 
+\include{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES

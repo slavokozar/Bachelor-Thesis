@@ -16,134 +16,74 @@
   {}
 \endgroup
 
-\entry{Reference3}{article}{}
+\entry{brettel2014virtualization}{article}{}
   \name{author}{4}{}{%
     {{}%
-     {Arnold}{A.}%
-     {A.~S.}{A.~S.}%
+     {Brettel}{B.}%
+     {Malte}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {Wilson}{W.}%
-     {J.~S.}{J.~S.}%
+     {Friederichsen}{F.}%
+     {Niklas}{N.}%
      {}{}%
      {}{}}%
     {{}%
-     {Boshier}{B.}%
-     {M.~G.}{M.~G.}%
+     {Keller}{K.}%
+     {Michael}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {Smith}{S.}%
-     {J.}{J.}%
+     {Rosenberg}{R.}%
+     {Marius}{M.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{AAS+1}
-  \strng{fullhash}{AASWJSBMGSJ1}
-  \field{labelyear}{1998}
-  \field{sortinit}{A}
-  \field{abstract}{%
-  Operating a laser diode in an extended cavity which provides
-  frequency-selective feedback is a very effective method of reducing the
-  laser's linewidth and improving its tunability. We have developed an
-  extremely simple laser of this type, built from inexpensive commercial
-  components with only a few minor modifications. A 780~nm laser built to this
-  design has an output power of 80~mW, a linewidth of 350~kHz, and it has been
-  continuously locked to a Doppler-free rubidium transition for several days.%
-  }
-  \field{number}{3}
-  \field{pages}{1236\bibrangedash 1239}
-  \field{title}{A Simple Extended-Cavity Diode Laser}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/69/1236/1
-  \endverb
-  \field{volume}{69}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{03}
-  \field{year}{1998}
+  \strng{namehash}{BM+1}
+  \strng{fullhash}{BMFNKMRM1}
+  \field{labelyear}{2014}
+  \field{sortinit}{B}
+  \field{title}{How virtualization, decentralization and network building
+  change the manufacturing landscape: An Industry 4.0 Perspective}
+  \field{volume}{44}
+  \field{journaltitle}{International Journal of Science, Engineering and
+  Technology 8 (1), 37}
+  \field{year}{2014}
 \endentry
 
-\entry{Reference1}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Hawthorn}{H.}%
-     {C.~J.}{C.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Weber}{W.}%
-     {K.~P.}{K.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Scholten}{S.}%
-     {R.~E.}{R.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{HCJWKPSRE1}
-  \strng{fullhash}{HCJWKPSRE1}
-  \field{labelyear}{2001}
-  \field{sortinit}{H}
-  \field{abstract}{%
-  We have developed an enhanced Littrow configuration extended cavity diode
-  laser (ECDL) that can be tuned without changing the direction of the output
-  beam. The output of a conventional Littrow ECDL is reflected from a plane
-  mirror fixed parallel to the tuning diffraction grating. Using a free-space
-  Michelson wavemeter to measure the laser wavelength, we can tune the laser
-  over a range greater than 10 nm without any alteration of alignment.%
-  }
-  \field{number}{12}
-  \field{pages}{4477\bibrangedash 4479}
-  \field{title}{Littrow Configuration Tunable External Cavity Diode Laser with
-  Fixed Direction Output Beam}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/72/4477/1
-  \endverb
-  \field{volume}{72}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{12}
-  \field{year}{2001}
-\endentry
-
-\entry{Reference2}{article}{}
+\entry{Drath2014}{article}{}
   \name{author}{2}{}{%
     {{}%
-     {Wieman}{W.}%
-     {Carl~E.}{C.~E.}%
+     {Drath}{D.}%
+     {R.}{R.}%
      {}{}%
      {}{}}%
     {{}%
-     {Hollberg}{H.}%
-     {Leo}{L.}%
+     {Horch}{H.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Diode Laser}
-  \strng{namehash}{WCEHL1}
-  \strng{fullhash}{WCEHL1}
-  \field{labelyear}{1991}
-  \field{sortinit}{W}
-  \field{abstract}{%
-  We present a review of the use of diode lasers in atomic physics with an
-  extensive list of references. We discuss the relevant characteristics of
-  diode lasers and explain how to purchase and use them. We also review the
-  various techniques that have been used to control and narrow the spectral
-  outputs of diode lasers. Finally we present a number of examples illustrating
-  the use of diode lasers in atomic physics experiments. Review of Scientific
-  Instruments is copyrighted by The American Institute of Physics.%
-  }
-  \field{number}{1}
-  \field{pages}{1\bibrangedash 20}
-  \field{title}{Using Diode Lasers for Atomic Physics}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/62/1/1
+  \keyw{production engineering computing;CPSs;German industry;Industrie
+  4.0;cyberphysical production systems;cyberphysical systems;fourth industrial
+  revolution;industrial Internet;industrial production systems;Industrial power
+  systems;Industries;Production facilities;Production systems;Technological
+  innovation}
+  \strng{namehash}{DRHA1}
+  \strng{fullhash}{DRHA1}
+  \field{labelyear}{2014}
+  \field{sortinit}{D}
+  \verb{doi}
+  \verb 10.1109/MIE.2014.2312079
   \endverb
-  \field{volume}{62}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{01}
-  \field{year}{1991}
+  \field{issn}{1932-4529}
+  \field{number}{2}
+  \field{pages}{56\bibrangedash 58}
+  \field{title}{Industrie 4.0: Hit or Hype?}
+  \field{volume}{8}
+  \field{journaltitle}{IEEE Industrial Electronics Magazine}
+  \field{year}{2014}
+  \warn{\item Invalid format of field 'month'}
 \endentry
 
 \lossort
