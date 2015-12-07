@@ -48,7 +48,9 @@ The installation of 4DIAC-IDE is independent from the used operating system. In 
 
 To install 4DIAC-IDE you simply download the latest version for your operating system from https://eclipse.org/4diac/. Unzip it to any desired folder and start the 4DIAC-IDE. It already contains a function block library, some sample applications and also pre-build versions of FORTE. If you only want to use available Function Blocks you are ready to go.
 
-\textbf{Building your own 4DIAC-IDE from source:} Running 4DIAC-IDE from source has the great advantage that you can easily keep up with the developments performed in the Mercurial repository. In case you want to run 4DIAC-IDE from source follow the Installation steps at https://eclipse.org/4diac/documentation/help.html
+\textbf{Building your own 4DIAC-IDE from source:} Running 4DIAC-IDE from source has the great advantage that you can easily keep up with the developments performed in the Mercurial repository. In case you want to run 4DIAC-IDE from source follow the Installation steps at https://eclipse.org/4diac/documentation/help.html 
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
@@ -87,6 +89,7 @@ CMake helps you to configure FORTE for compilation with your desired development
 When starting the CMake-GUI you have to select the source directory, which is the main FORTE directory and the bin directory (e.g.FORTE/bin/posix) which is the output directory. There CMake will put the build project files (e.g., the makefiles) as well as any configuration data. 
 
 
+\begin{verbatim}
 \begin{figure}
 \centering
 \includegraphics{Figures/cmake-1}
@@ -94,10 +97,12 @@ When starting the CMake-GUI you have to select the source directory, which is th
 \caption[CMake step 1]{Selection of source data and output folder}
 \label{fig:cmake-1}
 \end{figure}
+\end{verbatim}
  
 After that you will need to press the configuration button. A window will pop up that lets you select the kind of project you like to build. In this step you have to have installed compillers. 
 Select MSYS Makefiles as the generator for this project.
 
+\begin{verbatim}
 \begin{figure}
 \centering
 \includegraphics{Figures/cmake-2}
@@ -105,10 +110,12 @@ Select MSYS Makefiles as the generator for this project.
 \caption[CMake step 2]{Specifing the generator}
 \label{fig:cmake-2}
 \end{figure}
+\end{verbatim}
  
 
-For the correct Project Setting please have a look at the next step. In the CMake main window a list of red marked options will appear. These options allow you to configure your FORTE build. The minimal configuration you have to perform is to select the architecture you like to build for (e.g., FORTE\_ARCHITECTURE to POSIX / WIN32) and the modules with the function block libraries you like to use. You should also keep FORTE\_SUPPORT\_MONITORING enabled for Debugging and FB-Testing.
+For the correct Project Setting please have a look at the next step. In the CMake main window a list of red marked options will appear. These options allow you to configure your FORTE build. The minimal configuration you have to perform is to select the architecture you like to build for (e.g., FORTE_ARCHITECTURE to POSIX / WIN32) and the modules with the function block libraries you like to use. You should also keep FORTE_SUPPORT_MONITORING enabled for Debugging and FB-Testing.
 
+\begin{verbatim}
 \begin{figure}
 \centering
 \includegraphics{Figures/cmake-3}
@@ -116,10 +123,12 @@ For the correct Project Setting please have a look at the next step. In the CMak
 \caption[CMake step 3]{Configuring architecture of compilled FORTE}
 \label{fig:cmake-3}
 \end{figure}
+\end{verbatim}
  
 
 Then you need to press again the configure button and depending on your selection in the previous step new options (marked in red) may appear. Press configure until no new options are appearing and then the generate button for generating the project files.
 
+\begin{verbatim}
 \begin{figure}
 \centering
 \includegraphics{Figures/cmake-4}
@@ -127,6 +136,7 @@ Then you need to press again the configure button and depending on your selectio
 \caption[CMake step 4]{Configuration done.}
 \label{fig:cmake-4}
 \end{figure}
+\end{verbatim}
  
 After that you can start the build process.
 
@@ -135,13 +145,13 @@ Configuration of CMake for different OS:
 	\centering
 		\begin{tabular}{c | c}
 			\textbf{Windows} & \textbf{POSIX} \\
-			FORTE\_ARCHITECTURE\_WIN32  & FORTE\_ARCHITECTURE\_POSIX \\
-			FORTE\_MODULE\_CONVERT & FORTE\_MODULE\_CONVERT \\
-			FORTE\_MODULE\_IEC61131 & FORTE\_MODULE\_IEC61131 \\
-			FORTE\_MODULE\_OPC\_UA & FORTE\_MODULE\_OPC\_UA \\
-			FORTE\_MODULE\_Test & FORTE\_MODULE\_Test \\
-			FORTE\_MODULE\_UTILS & FORTE\_MODULE\_UTILS \\
-			FORTE\_SUPPORT\_MONITORING & FORTE\_SUPPORT\_MONITORING \\
+			FORTE_ARCHITECTURE_WIN32  & FORTE_ARCHITECTURE_POSIX \\
+			FORTE_MODULE_CONVERT & FORTE_MODULE_CONVERT \\
+			FORTE_MODULE_IEC61131 & FORTE_MODULE_IEC61131 \\
+			FORTE_MODULE_OPC_UA & FORTE_MODULE_OPC_UA \\
+			FORTE_MODULE_Test & FORTE_MODULE_Test \\
+			FORTE_MODULE_UTILS & FORTE_MODULE_UTILS \\
+			FORTE_SUPPORT_MONITORING & FORTE_SUPPORT_MONITORING \\
  
 		\end{tabular}
 \end{table*}

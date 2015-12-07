@@ -86,6 +86,121 @@
   \warn{\item Invalid format of field 'month'}
 \endentry
 
+\entry{4618110}{inproceedings}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Strasser}{S.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rooker}{R.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ebenhofer}{E.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zoitl}{Z.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sunder}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Valentini}{V.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Martel}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{IEC standards;distributed control;industrial control;IEC 61499
+  standard;configurability;distributed industrial automation;distributed
+  industrial control;interoperability;open source
+  strategy;portability;reference framework;Automatic control;Automatic
+  generation control;Automation;Control systems;Distributed control;Electrical
+  equipment industry;Home appliances;IEC standards;Industrial control;Standards
+  development}
+  \strng{namehash}{ST+1}
+  \strng{fullhash}{STRMEGZASCVAMA1}
+  \field{labelyear}{2008}
+  \field{sortinit}{S}
+  \field{booktitle}{Industrial Informatics, 2008. INDIN 2008. 6th IEEE
+  International Conference on}
+  \verb{doi}
+  \verb 10.1109/INDIN.2008.4618110
+  \endverb
+  \field{issn}{1935-4576}
+  \field{pages}{283\bibrangedash 288}
+  \field{title}{Framework for Distributed Industrial Automation and Control
+  (4DIAC)}
+  \field{year}{2008}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{4618109}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Sunder}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zoitl}{Z.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Christensen}{C.}%
+     {J.H.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Steininger}{S.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rritsche}{R.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{IEC standards;control engineering computing;embedded
+  systems;object-oriented programming;programmable controllers;software
+  architecture;IEC 61131-3 standard;IEC 61499 standard;PLC;automation
+  system;component-based software engineering;control system;embedded system
+  design;modeling paradigm;programming paradigm;software architecture;Automatic
+  control;Automatic programming;Computer science;Control system
+  synthesis;Control systems;Design automation;Embedded system;IEC
+  standards;Parallel programming;Software engineering}
+  \strng{namehash}{SC+1}
+  \strng{fullhash}{SCZACJSHRJ1}
+  \field{labelyear}{2008}
+  \field{sortinit}{S}
+  \field{booktitle}{Industrial Informatics, 2008. INDIN 2008. 6th IEEE
+  International Conference on}
+  \verb{doi}
+  \verb 10.1109/INDIN.2008.4618109
+  \endverb
+  \field{issn}{1935-4576}
+  \field{pages}{277\bibrangedash 282}
+  \field{title}{Considering IEC 61131-3 and IEC 61499 in the context of
+  component frameworks}
+  \field{year}{2008}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
 \lossort
 \endlossort
 
