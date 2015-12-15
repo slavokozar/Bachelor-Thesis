@@ -6,34 +6,39 @@
 \contentsline {chapter}{Acknowledgements}{vii}{section*.4}
 \contentsline {chapter}{Contents}{ix}{section*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.15}
-\contentsline {section}{\numberline {1.1}Industry 4.0}{1}{section.16}
-\contentsline {section}{\numberline {1.2}Aim of thesis}{1}{section.17}
-\contentsline {section}{\numberline {1.3}Chapters overview}{2}{section.18}
-\contentsline {chapter}{\numberline {2}4DIAC}{3}{chapter.19}
-\contentsline {section}{\numberline {2.1}IEC 61499}{3}{section.20}
-\contentsline {section}{\numberline {2.2}4DIAC}{4}{section.21}
-\contentsline {subsection}{\numberline {2.2.1}Installation of 4DIAC-IDE}{4}{subsection.22}
-\contentsline {subsection}{\numberline {2.2.2}FORTE compilation}{4}{subsection.23}
-\contentsline {subsection}{\numberline {2.2.3}Installing and Settipg up MinGW for FORTE Development}{8}{subsection.29}
-\contentsline {section}{\numberline {2.3}Function blocks}{9}{section.30}
-\contentsline {chapter}{\numberline {3}OPC UA}{11}{chapter.31}
-\contentsline {section}{\numberline {3.1}What is OPC UA}{11}{section.32}
-\contentsline {section}{\numberline {3.2}Data structure}{11}{section.33}
-\contentsline {section}{\numberline {3.3}OPEN 62541 stack}{11}{section.34}
-\contentsline {subsection}{\numberline {3.3.1}compiling}{11}{subsection.35}
-\contentsline {subsection}{\numberline {3.3.2}first use}{11}{subsection.36}
-\contentsline {section}{\numberline {3.4}Other stacks}{11}{section.37}
-\contentsline {chapter}{\numberline {4}Chapter Title Here}{13}{chapter.38}
-\contentsline {section}{\numberline {4.1}Main Section 1}{13}{section.39}
-\contentsline {subsection}{\numberline {4.1.1}Subsection 1}{13}{subsection.40}
-\contentsline {subsection}{\numberline {4.1.2}Subsection 2}{13}{subsection.41}
-\contentsline {section}{\numberline {4.2}Main Section 2}{13}{section.42}
-\contentsline {chapter}{\numberline {5}Results}{15}{chapter.43}
-\contentsline {section}{\numberline {5.1}Created function blocks}{15}{section.44}
-\contentsline {section}{\numberline {5.2}Implementation of function blocks}{15}{section.45}
-\contentsline {subsection}{\numberline {5.2.1}server}{15}{subsection.46}
-\contentsline {subsection}{\numberline {5.2.2}subscriber}{15}{subsection.47}
-\contentsline {section}{\numberline {5.3}Example application}{15}{section.48}
-\contentsline {section}{\numberline {5.4}Main Section 2}{15}{section.49}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.50}
-\contentsline {chapter}{Bibliography}{19}{appendix*.51}
+\contentsline {section}{\numberline {1.1}Reconfiguration}{1}{section.16}
+\contentsline {section}{\numberline {1.2}The aim of thesis}{2}{section.18}
+\contentsline {section}{\numberline {1.3}Chapters overview}{2}{section.19}
+\contentsline {chapter}{\numberline {2}IEC 61499}{3}{chapter.20}
+\contentsline {section}{\numberline {2.1}Introduction to IEC 61499}{3}{section.25}
+\contentsline {section}{\numberline {2.2}Types of FB in IEC 61499}{4}{section.27}
+\contentsline {subsection}{\numberline {2.2.1}Basic FB}{4}{subsection.28}
+\contentsline {subsection}{\numberline {2.2.2}Composite FB}{5}{subsection.30}
+\contentsline {subsection}{\numberline {2.2.3}Service Interface FB}{5}{subsection.32}
+\contentsline {section}{\numberline {2.3}IEC 61499 Base Model}{6}{section.33}
+\contentsline {section}{\numberline {2.4}IEC 61499 applications}{7}{section.35}
+\contentsline {section}{\numberline {2.5}The 4DIAC initiative}{7}{section.36}
+\contentsline {section}{\numberline {2.6}4DIAC IDE}{7}{section.38}
+\contentsline {section}{\numberline {2.7}4DIAC RUNTIME ENVIRONMENT - FORTE}{10}{section.43}
+\contentsline {subsection}{\numberline {2.7.1}Function Blocks in the FORTE}{10}{subsection.44}
+\contentsline {chapter}{\numberline {3}OPC Unified Architecture}{13}{chapter.45}
+\contentsline {section}{\numberline {3.1}Service Oriented Architecture}{13}{section.46}
+\contentsline {section}{\numberline {3.2}Web service}{13}{section.48}
+\contentsline {section}{\numberline {3.3}OPC Unified Architecture}{14}{section.49}
+\contentsline {subsection}{\numberline {3.3.1}SOA in OPC UA}{14}{subsection.50}
+\contentsline {subsection}{\numberline {3.3.2}OPC UA communication stacks}{14}{subsection.51}
+\contentsline {section}{\numberline {3.4}OPEN 62541 stack}{15}{section.52}
+\contentsline {subsection}{\numberline {3.4.1}building sdk}{15}{subsection.53}
+\contentsline {chapter}{\numberline {4}OPC UA}{17}{chapter.54}
+\contentsline {chapter}{\numberline {5}Results}{19}{chapter.55}
+\contentsline {section}{\numberline {5.1}Created function blocks}{19}{section.56}
+\contentsline {section}{\numberline {5.2}Implementation of function blocks}{19}{section.57}
+\contentsline {subsection}{\numberline {5.2.1}server}{19}{subsection.58}
+\contentsline {subsection}{\numberline {5.2.2}subscriber}{19}{subsection.59}
+\contentsline {section}{\numberline {5.3}Example application}{19}{section.60}
+\contentsline {section}{\numberline {5.4}Main Section 2}{19}{section.61}
+\contentsline {chapter}{\numberline {A}Installation of 4DIAC-IDE}{21}{appendix.62}
+\contentsline {section}{\numberline {A.1}4DIAC IDE installation}{21}{section.63}
+\contentsline {section}{\numberline {A.2}FORTE compilation}{21}{section.64}
+\contentsline {section}{\numberline {A.3}Installing and Settipg up MinGW for FORTE Development}{25}{section.70}
+\contentsline {chapter}{Bibliography}{27}{appendix*.71}

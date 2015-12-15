@@ -1,189 +1,208 @@
 % Chapter Template
 
-\chapter{4DIAC} % Main chapter title
-
+\chapter{IEC 61499} % Main chapter title
 \label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{IEC 61499}
 
-Standard IEC 61499 servers reference architecture for distributed, and modular control systems. 
 
-This standard specifies an architectural model for industrial distributed regulation systems. It extends its predecessor IEC 61131-3 with additional event handling mechanisms.\cite{4618110}
+IEC 61499 is a new family of standards for Industrial Process Measurement and Control Systems (IPCMCS). This family consist of four parts:
 
-When comparing IEC 61131-3 and IEC 61499 the biggest difference is in the system of functions execution. While in IEC 61131-3 function was triggered by cyclic execution, the IEC 61499 came with the event driven execution. 
+\begin{enumerate}
+	\item IEC 61499-1 : Function Blocks - Part 1: Architecture
+	\item IEC 61499-2 : Function Blocks - Part 2: Software tools requirements
+	\item IEC 61499-3 : Function blocks for industrial-process measurement and control systems - Part 3: Tutorial information 
+	\item IEC 61499-4 : Function Blocks - Part 4 : Rules for compliance profiles
+\end{enumerate}
 
-Cyclic execution was problem that does not allow mass using of IEC 61131-3 in distributed systems. This type of execution is 	reliant to the system clock. This approach is not problematic in the scope of one device system. However in system with multiple devices there is a problem of sharing the system time. It is practically impossible to run this kind of system synchronously.
-In case of cyclic execution every 1ms and not precise synchronous system it can take up to 1ms to handle any kind of change. In some kind of applications this time delay can lead to the destruction of product, machine or even whole manufacturing system. 
-This problem can be solved by decreasing time between two executions. However this solution of delay problem is causing need of huge bandwidth for data transfer. It leads to cost of data transport layer increase and also scale up data transfer error rate possibility. 
 
-In IEC 61499 standard this problem was solved by changing cyclic to event driven execution. Function Blocks are not executed cyclically, but are triggered by event. This solution prevents problem with central time and its sharing and caused also rapid decrease of needed bandwidth. In this approach the data are transferred only when event is triggered. 
+Main purpose of all parts of this family is to define Function Block (FB), so in this Thesis term IEC 61499 refer to the whole family of these standards. 
+IEC 61499 is based on an older IEC 61311 (1993) family of standards, which is the most common adopted standard in domain of IPMCS.  (citovat Aloisa)
+This makes IEC 61499 easy to adopt. There are also another key features which makes IEC 61499 easy to adopt standard like its modularity, distribution support, reconfiguration support and event-triggered execution model. 
+
+\section{Introduction to IEC 61499}
+
+The IEC 61499 standard defines several models, which  developer uses to create a distributed control application in a graphical manner. This brief introduction will give you insight into the IEC 61499 standard for purposes of this thesis. A full description of architecture may be found in IEC61499-1.
+
+Models which are defined in IEC 61499 are (in hierarchical order, from the global model to atomic one): the application model, the system model, the device model, the resource model, the Fucntion Block (FB) model.
+
+The application model consists of the multiple system models, one of these system models consist of multiple device models etc. 
+
+The Base and most important model of IEC 61499 is FB. FB is independent, self-contained software component with the interface through which it provides specific functions. This model was taken from IEC 61131-3 standard. Against IEC 61131-3 FB definition in IEC 61499 event interface is added. The function block function is triggered by one of the input events. During the execution FB processes input data, set output data. When the processing is done FB generates triggers output event. 
+
+\begin{figure}
+\centering
+\includegraphics{Figures/IEC61499FunctionBlock}
+\decoRule
+\caption[IEC 61499 Function Block]{http://www.automation.com/images/isa_automation_week/IEC61499FunctionBlock.png}
+\label{fig:IEC61499FunctionBlock}
+\end{figure}
+ 
+
+When comparing IEC 61131-3 and IEC 61499 the biggest difference is in the even-driven execution, while in IEC 61131-3 function was triggered by the cyclic execution.
+
+Cyclic execution was problematic. It does not allow mass using of IEC 61131-3 in distributed systems. This type of execution is 	reliant to the system clock. This approach is not problematic in the scope of one device system. However, in the system with multiple devices there is a problem of sharing the system time. It is practically impossible to run this kind of system synchronously.
+In case of the cyclic execution every 1ms and not precise synchronous system it can take up to 1ms to handle any kind of change. In some kind of applications this time delay can lead to the destruction of product, machine or even whole manufacturing system. 
+This problem can be solved by decreasing time between two executions. However this solution of delay problem is causing need of bandwidth for data transfer. It leads to the cost of data transport layer increase and also scale up data transfer error rate possibility. 
+
+In IEC 61499 standard this problem was solved by changing cyclic to event driven execution. Function Blocks are not executed cyclically, but are triggered by event. This solution prevents problem with the central time and its sharing and caused also rapid decrease of needed bandwidth. In this approach the data are transferred only when event is triggered. 
 For example function block handling the end switch of machine does not have to propagate its state every 1ms like in the previous example. It propagates its state only when change state event occurs. 
 
-There is no support in IEC 61499 for cyclic execution anymore, but for purposes of back compatibility there is a solution of implementing IEC 61131 function into IEC 61499 system. The situation of a program is simply depicted by triggering of cyclic execution by use of an E\_CYCLE FB.\cite{4618109}
+There is no support in IEC 61499 for cyclic execution anymore, but for purposes of back compatibility there is a solution of implementing IEC 61131 function into IEC 61499 system. The situation of a program is simply depicted by triggering of the cyclic execution by the use of an E\_CYCLE FB.\cite{4618109} This function block triggers regular event to start execution of IEC 61131-3 compatible applications. 
+
+\section{Types of FB in IEC 61499}
+
+\subsection{Basic FB}
+Basic FB (BFB) contains a state machine controlling internal execution called Execution Control Chart (ECC).
+ECC consists of three parts: ECC states with associated ECC actions and ECC transitions, which connects the states. ECC transitions are typically guarded by Boolean logical statements. 
+
+When an input event arrives, the first transition with true condition results in state change. With state entry also action associated with this state is executed. Algorithm can access only data input, data output and inner variables. //citovat IEC 61499-1
+
+\begin{figure}[hbp]
+\centering
+\includegraphics[scale=0.5]{Figures/basicfb-ecc}
+\decoRule
+\caption[IEC 61499 Basic FB's ECC]{Example of basic FB's ECC}
+\label{IEC 61499 Basic FB's ECC}
+\end{figure}
+
+\subsection{Composite FB}
 
 
-\section{4DIAC}
+Composite FBs (CFBs) are containers for FB dedicated to generate cleaner design. Using Composite FBs developer can create one FB for more complex, many times repeating function consisting of many basic or composite FBs. This allows designer to re-use his design. 
+Incomming event and data connections are connected to the internal FBs and also outgoing connections are connected to internal FBs.
 
-Current there exist only a few different implementations of the IEC 61499 reference model. \cite{4618110}
 
-This could be also because of weak definition of execution model and event inside function blocks network scheduling.
+\begin{figure}[hbp]
+\centering
+\includegraphics[scale=0.5]{Figures/compositefb}
+\decoRule
+\caption[IEC 61499 Composite FB]{Example of composite FB structure}
+\label{IEC 61499 Composite FB}
+\end{figure}
 
-The other reason for slow take up of the standard by industry is that the IEC 61499 standard is now mainly used in research work by various research and university institutes. \cite{4618110} These research groups around the world apply to FBDK/FBRT Java implementation from HOLOBLOC Inc.
+\subsection{Service Interface FB}
+Service Interface FB is dedicated to function out of scope of IEC 61499. Typical function is the access to the device's hardware, I/O interface or communication interface. There are two general types of SIFBs in IEC 61499. Requester SIFB and responder SIFB. The requester SIFB remains passive, until it is application-triggered at one of its event inputs. 
+The responder type is a resource or hardware triggered FB. It can trigger events by detecting actions of the hardware (e.g. interrupts) without need to trigger this FB from application. 
+
+\section{IEC 61499 Base Model}
+
+Modeling of IEC 61449 system can be divided into two phases. 
+In the first phase designer creates Function Block Network by interconnecting of the FBs with data and event connection. In this phase developer has in mind only functionality and it does not depend on any device or control infrastructure. 
+In the second phase parts of the system model created in the first phase are mapped to control devices.
+For example, in Figure 2.4a, Application 1 is mapped to Devices 2, 3, 4, and 5, whereas Application 2 is mapped only to device 2. 
+
+\begin{figure}[hbp]
+\centering
+\includegraphics[scale=0.6]{Figures/IEC61499Models}
+\decoRule
+\caption[IEC 61499 Base Model]{http://2.bp.blogspot.com/-qzJhgeMHSnQ/UNZC7b0op6I/AAAAAAAALwk/aW3FpwY3e5o/s1600/IEC+61499+Models.jpg}
+\label{IEC 61499 Base Model}
+\end{figure}
+
+IEC 61499 is executed on devices. Every device consist of device management component, communication iterface - provides communication between devices, process interface - provides services for accessing the sensors, actuators and other physical devices needed to control the process. Device can also contain resource. 
+
+Resources are functional units which contain applications or the  parts of applications. Resources in device are independend. This means resources can be added, modified, removed in any particular device without interferring any other resource. This approach is very important to reach the goal of reconfiguration. The task of the resource is to provide execution environment, delivering event notifications.
+
+\section{IEC 61499 applications}
+The current application of IEC 61499 can be devided into the research and industrial sector.
+IEC 61499 standard exists since January 2005. Before standardization in 2000 it was available in form of so-called Public Available Specification. Although IEC 61499 has been available in some forms for a long time, most published work on the standard up to now has been academic or, if industrially-based has resulted only in prototypical test cases.\cite{4618110}
+
+In industry sector the adoptions of IEC 61499 were mainly case studies and prototypes. A lot of case studies had a starting point via FBDK/FBRT package from Rockwell Automation.
+FBRT is implemented in Java and IEC 61499 elements are implemented as Java Classes. This package is a reference implementation and was used to test models and standard. In FBRT the event notification is handeld by function call. The source FB calls notification function of the event connection object and this object triggers event on destination FB by calling his event function. This approach creates delays and is also one of the greatest reasons why FBRT has never been adopted by industry sector. Another reason is also that this Java implementation was not able to run on small industrial control platforms (8/16/32b computers). 
+
+
+\section{The 4DIAC initiative}
+
+In July 2007 the 4diac open source initiative was founded by PROFACTOR GmbH and the Automation and Control Institute of Vienna University of Technology. 
+Nowadays this initiative is conducted with and supported by international automation network O\footnote{3}NEIDA. 
+
 
 Aim of 4DIAC initiative is to create an open-source framework based on IEC 61499 standard which will provide reference implementation of execution model for IEC 61499.
+
 4DIAC initiative is currently developing two projects IEC 61499 compliant :
 \begin{itemize}
+	\item 4DIAC IDE - engineering tool
 	\item FORTE - runtime environment
-	\item 4DIAC-IDE - engineering tool
 \end{itemize}
 
 To work with 4DIAC framework you have to use both of this parts. 
 
-\subsection{Installation of 4DIAC-IDE}
-The installation of 4DIAC-IDE is independent from the used operating system. In order to run 4DIAC-IDE you require Java 1.7 SDK or later, whereas it is currently NOT recommended to use Java 8.
+You can find instructions how to install and run this project on your own computer in Appendix A. 
+In the next sections brief informations about 4DIAC IDE and FORTE are introduced. These are just the minimal amount of necessary informatios in needs of this thesis.
 
-To install 4DIAC-IDE you simply download the latest version for your operating system from https://eclipse.org/4diac/. Unzip it to any desired folder and start the 4DIAC-IDE. It already contains a function block library, some sample applications and also pre-build versions of FORTE. If you only want to use available Function Blocks you are ready to go.
+\section{4DIAC IDE}
 
-\textbf{Building your own 4DIAC-IDE from source:} Running 4DIAC-IDE from source has the great advantage that you can easily keep up with the developments performed in the Mercurial repository. In case you want to run 4DIAC-IDE from source follow the Installation steps at https://eclipse.org/4diac/documentation/help.html
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
+4DIAC IDE is IEC 61499 development evironmen based on the Eclipse open tool framework. 
+Eclipse base makes 4DIAC IDE multiplatform open source IDE. 
 
-\subsection{FORTE compilation}
+As all other IDEs based on Eclipse work in 4DIAC IDE is divided into perspectives. Every user can create his own perspective, but there are three perspectives which are created by default in 4DIAC IDE. 
 
-For conducting first experiments with 4DIAC you can use the pre-build version of FORTE which comes along in the runtimes directory of the 4DIAC-IDE package. However if you want to develop your own Function Blocks or you want to run FORTE on different control devices you have to download and build FORTE from source.
+This perspective is dedicated to the basic creation of application. FBs can be added, created event and data connection. Below system configuration of one of the example supplied with 4DIAC IDE can be seen. 
 
-The compiling and debugging of FORTE consists of few steps:
+Application of figure consist of two devices, connected via Ethernet. Every of this device includes two resources. One of the resources is management resource allways named MGR and read-only.
 
-\textbf{Download source code}
-You can download the latest Version of FORTE on http://www.eclipse.org/4diac/. Extract the file into your desired working directory.
-You can also use Mercurial Hg like TortoiseHG to get FORTE from http://hg.code.sf.net/p/fordiac/forte.
-
-\textbf{Prepare compilation and linking tools
-}In case you want to create own function blocks, or edit existing one you are going to compile your own version of FORTE. According to your operating system, you have several options to choose. 
-In Linux – like systems required packages to compile are:
-\begin{itemize}
-	\item binutils 
-	\item gcc 
-	\item gdb
-	\item make
-\end{itemize}
-In case you are Mac user you can compile FORTE in X-Code. 
-Compiling on Windows is most complicated. There are few possibilities:
-\begin{itemize}
-	\item Compiling and Debbugging FORTE with MS Visual Studio Express
-	\item Compiling using Cygwin 
-	\item Compiling using MinGW – I have used this option. Whole subsection is dedicated to this option
-\end{itemize}
-
-\textbf{CMake for generating the make file}
-
-CMake helps you to configure FORTE for compilation with your desired development environment or hardware device. For starters we recommend to use the GUI tool that comes with CMake.
-
-When starting the CMake-GUI you have to select the source directory, which is the main FORTE directory and the bin directory (e.g.FORTE/bin/posix) which is the output directory. There CMake will put the build project files (e.g., the makefiles) as well as any configuration data. 
-
-
-\begin{figure}
+\begin{figure}[hbp]
 \centering
-\includegraphics{Figures/cmake-1}
+\includegraphics[scale=0.3]{Figures/systemperspective}
 \decoRule
-\caption[CMake step 1]{Selection of source data and output folder}
-\label{fig:cmake-1}
+\caption[4DIAC IDE System Perspective]{Perspective dedicated to basic creation of application}
+\label{4DIAC IDE System Perspective}
 \end{figure}
- 
-After that you will need to press the configuration button. A window will pop up that lets you select the kind of project you like to build. In this step you have to have installed compillers. 
-Select MSYS Makefiles as the generator for this project.
 
-\begin{figure}
+By double clicking on resource you can edit Function Block Network running on this resource.
+
+\begin{figure}[hbp]
 \centering
-\includegraphics{Figures/cmake-2}
+\includegraphics[scale=0.3]{Figures/systemapplicationperspective}
 \decoRule
-\caption[CMake step 2]{Specifing the generator}
-\label{fig:cmake-2}
+\caption[4DIAC IDE System Perspective - Resource]{Editing Function Block Network in resource}
+\label{4DIAC IDE System Perspective - Resource}
 \end{figure}
- 
 
-For the correct Project Setting please have a look at the next step. In the CMake main window a list of red marked options will appear. These options allow you to configure your FORTE build. The minimal configuration you have to perform is to select the architecture you like to build for (e.g., FORTE\_ARCHITECTURE to POSIX / WIN32) and the modules with the function block libraries you like to use. You should also keep FORTE\_SUPPORT\_MONITORING enabled for Debugging and FB-Testing.
+Type Management Perspective is dedicated to editing and creating of developers' own FBs. 
+On the figure below, there are shown tools which can be applied on the function block.
+In the case of the basic FB you can edit also function of this FB by editing its EEC or Algorithm writen in pseudocode. 
+The function of the Composite FB can by modified or created by editing Composite Network. Only Service Interface FBs function is not allowed to change in 4DIAC editor. Function of SIFBs can be modified only by editing forte source. 
 
-\begin{figure}
+All changes made in Type Management Perspective have to be exported into the forte code. To use this modified FBs in control system it is necessary to recompile the FORTE with these updated function block.
+
+
+\begin{figure}[hbp]
 \centering
-\includegraphics{Figures/cmake-3}
+\includegraphics[scale=0.3]{Figures/typemanagementperspective}
 \decoRule
-\caption[CMake step 3]{Configuring architecture of compilled FORTE}
-\label{fig:cmake-3}
+\caption[4DIAC IDE Type Management Perspective ]{Editing or Creating FBs}
+\label{4DIAC IDE Type Management Perspective}
 \end{figure}
- 
 
-Then you need to press again the configure button and depending on your selection in the previous step new options (marked in red) may appear. Press configure until no new options are appearing and then the generate button for generating the project files.
 
-\begin{figure}
+Deployment Perspective is dedicated to the deployment and upload application into the control system devices by clicking on Download button.
+
+There is also possibility to run local FORTE and FBRT directly from Deployment Perspective. In case of local FORTE runtime, all its output are shown in Console window. 
+
+
+\begin{figure}[hbp]
 \centering
-\includegraphics{Figures/cmake-4}
+\includegraphics[scale=0.3]{Figures/deploymentperspective}
 \decoRule
-\caption[CMake step 4]{Configuration done.}
-\label{fig:cmake-4}
+\caption[4DIAC IDE Deployment Perspective ]{Uploading application into devices}
+\label{4DIAC IDE Deployment Perspective}
 \end{figure}
- 
-After that you can start the build process.
-
-Configuration of CMake for different OS:
-\begin{table*}
-	\centering
-		\begin{tabular}{c | c}
-			\textbf{Windows} & \textbf{POSIX} \\
-			FORTE\_ARCHITECTURE\_WIN32  & FORTE\_ARCHITECTURE\_POSIX \\
-			FORTE\_MODULE\_CONVERT & FORTE\_MODULE\_CONVERT \\
-			FORTE\_MODULE\_IEC61131 & FORTE\_MODULE\_IEC61131 \\
-			FORTE\_MODULE\_OPC\_UA & FORTE\_MODULE\_OPC\_UA \\
-			FORTE\_MODULE\_Test & FORTE\_MODULE\_Test \\
-			FORTE\_MODULE\_UTILS & FORTE\_MODULE\_UTILS \\
-			FORTE\_SUPPORT\_MONITORING & FORTE\_SUPPORT\_MONITORING \\
- 
-		\end{tabular}
-\end{table*}
-
-
-\textbf{IDE to work with the FORTE code}
-You can use different development Environments, whereas the C++ Compiler you can use to build FORTE not only depends on this environment but also on your operating system. For compiling FORTE under Windows you can use either Visual Studio (Express or full edition) or Eclipse. When using Eclipse for development and debugging under Windows you will need to use a Posix emulation environment like cygwin or minGW.
-\begin{itemize}
-	\item Compiling and Debugging FORTE with MS Visual Studio Express
-	\item Compiling and Debugging FORTE with Eclipse
-	\item Compiling and Debugging FORTE with CodeBlocks
-\end{itemize}
-
-For the development with FORTE the understanding of the general file structure is helpful. Therefore the essential parts as well as the Makefiles which are important for the configuration and compilation of FORTE are listed in the following:
-\begin{itemize}
-	\item \textsl{src/modules} this folder contains the source code (cpp, h) of all Function Blocks available for FORTE
-	\item \textsl{bin/<yourSystem>/src} contains the forte executable after compilation with Makefile all
-	\item \textsl{bin/<yourSystem>/src\_gen} contains the object files generated during compilation with Makefile all
-	\item all this Makefile generates the object files for all FORTE core files and Function Block source code files
-	\item clean this makefile removes all generated object files.
-\end{itemize}
-
-
-\subsection{Installing and Settipg up MinGW for FORTE Development}
-
-Download and install MinGW from http://www.mingw.org/
-Launch MinGW installer and install default setting and add following packages:
-
-\begin{itemize}
-	\item Mingw32-gcc
-	\item Mingw32-gcc-g++
-	\item mingw32-make
-	\item msys-make 
-	\item mingw32-libz ( newer version of windows doesn’t include libraries)
-	\item mingw32-gmp ( newer version of windows doesn’t include libraries)	
-\end{itemize}
-
-
-After install go to the Control Panel/System/Advanced/Environment Variables.  Change PATH variable (click on it) add path where your MinGW binaries have been installed in e.g., C:\\MinGW\\bin\\;. Add C:\\MinGW\\bin;C:\\MinGW\\msys\\1.0\\bin; in the Windows file PATH. 
-\textbf{Test MinGW}
-Open command prompt window by pressing Windows button and entering cmd. Enter bash, if bash prompt appears it was successful.
 
 
 
-\section{Function blocks}
+\section{4DIAC RUNTIME ENVIRONMENT - FORTE}
+
+
+The FORTE is a portable C++ implementation of an IEC 61499 runtime environment. It is focused on the small embedded control devices (also 16/ 32 bit controllers) and provides execution of all IEC 61499 types of functions blocks. Currently is forte available for Windows, Posix (Cygwin, Linux), NET+OS 7, eCos. It can be also used on small embedded boards like RaspberryPi, BeagleBone or even Lego Mindstroms nxt. 
+
+\subsection{Function Blocks in the FORTE}
+Basic and composite FBs are easy to create and edit in 4DIAC IDE. 
+However Service Interfaces FBs, which are most important, because serves connection to the physical devices in control system are defined twice. 
+In 4DIAC IDE only outer interface, like event and data inputs outputs are defined function of these function blocks is defined in C++ function generated to every function block. Creating of function block will be discussed in the next chapters. 
+
+

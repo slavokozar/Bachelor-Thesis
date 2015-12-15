@@ -2,12 +2,22 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Change of industrial pyramide}}{2}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces CMake step 1}}{5}{figure.caption.24}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces CMake step 2}}{6}{figure.caption.25}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces CMake step 3}}{7}{figure.caption.26}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces CMake step 4}}{7}{figure.caption.27}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces IEC 61499 Function Block}}{4}{figure.caption.26}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces IEC 61499 Basic FB's ECC}}{5}{figure.caption.29}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces IEC 61499 Composite FB}}{5}{figure.caption.31}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces IEC 61499 Base Model}}{6}{figure.caption.34}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 4DIAC IDE System Perspective}}{8}{figure.caption.39}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 4DIAC IDE System Perspective - Resource}}{9}{figure.caption.40}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 4DIAC IDE Type Management Perspective }}{9}{figure.caption.41}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 4DIAC IDE Deployment Perspective }}{11}{figure.caption.42}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 4DIAC IDE Deployment Perspective }}{13}{figure.caption.47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces CMake step 1}}{22}{figure.caption.65}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces CMake step 2}}{23}{figure.caption.66}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces CMake step 3}}{23}{figure.caption.67}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces CMake step 4}}{24}{figure.caption.68}
